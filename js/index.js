@@ -1,3 +1,5 @@
+const { doc } = require("firebase/firestore/lite");
+
 const footer = document.createElement("footer");
 footer.textContent = "Jose A's Portfolio";
 document.body.appendChild(footer);
@@ -13,3 +15,39 @@ for (let i = 0; i < skills.length; i++) {
     li.textContent = skills[i];
     skillsList.appendChild(li);
 }
+
+const messageForm = document.querySelector('form[name="leave_message]');
+messageForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name = event.target.userName.value;
+    const email = event.target.userEmail.value;
+    const message = event.target.userMessage.value;
+
+    console.log(name);
+    console.log(email);
+    console.log(message);
+
+    const messageSelection = document.querySelector("#messages ul");
+    const newMessage = document.createElement("li");
+    newMessage.innerHTML = `
+    <a href="mailto:${userEmail}"
+        ${userName}
+        </a>
+        `;
+        document.querySelector("#messageList").appendChild(newMessage); 
+
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    removeButton.type = "button";
+    removeButton.addEventListener("click", function() {
+        const entry = event.target.parentElement;
+        entry.remove();
+        
+        newMessage.appendChild(removeButton);
+    })
+    
+
+    messageForm.reset();
+}); 
