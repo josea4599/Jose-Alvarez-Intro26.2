@@ -86,8 +86,13 @@ h2 {
   margin-top: 10px;
 }
 
+#Skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 #Skills li {
-    display: inline-block;
 
     background-color: white;
     color: black;
