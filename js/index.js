@@ -1,4 +1,3 @@
-const { doc } = require("firebase/firestore/lite");
 
 const footer = document.createElement("footer");
 document.body.appendChild(footer);
