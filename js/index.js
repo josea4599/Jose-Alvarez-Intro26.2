@@ -1,13 +1,15 @@
-const { doc } = require("firebase/firestore/lite");
 
 const footer = document.createElement("footer");
-document.body.appendChild(footer);
+
+
 let today = new Date();
 let thisYear = today.getFullYear();
+
 const copyright = document.createElement("p");
 copyright.textContent = `Jose J Alvarez ${thisYear}`;
 footer.appendChild(copyright);
 document.body.appendChild(footer);
+
 const skills = ["JavaScript", "HTML", "CSS", "GitHub"];
 const skillsList = document.querySelector("#Skills ul");
 for (let i = 0; i < skills.length; i++) {
@@ -16,7 +18,7 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(li);
 }
 
-const messageForm = document.querySelector('form[name="leave_message]');
+const messageForm = document.querySelector('form[name="leave_message"]');
 messageForm.addEventListener("submit", function(event){
 
     event.preventDefault();
