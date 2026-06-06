@@ -19,36 +19,40 @@ for (let i = 0; i < skills.length; i++) {
 }
 
 const messageForm = document.querySelector('form[name="leave_message"]');
+
 messageForm.addEventListener("submit", function(event){
 
     event.preventDefault();
 
-    const name = event.target.userName.value;
-    const email = event.target.userEmail.value;
-    const message = event.target.userMessage.value;
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+    const messageList = document.querySelector("#messages ul");
 
-    console.log(name);
-    console.log(email);
-    console.log(message);
+    console.log(usersName);
+    console.log(usersEmail);
+    console.log(usersMessage);
 
-    const messageSelection = document.querySelector("#messages ul");
+    //const messageSelection = document.querySelector("#messages ul");
     const newMessage = document.createElement("li");
     newMessage.innerHTML = `
-    <a href="mailto:${userEmail}"
-        ${userName}
-        </a>
+    <a href="mailto:${usersEmail}"> ${usersName}</a>
+    <span>${usersMessage}</span>
         `;
-        document.querySelector("#messageList").appendChild(newMessage); 
+        //document.querySelector("#messageList").appendChild(newMessage); 
 
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
     removeButton.type = "button";
-    removeButton.addEventListener("click", function() {
+
+    removeButton.addEventListener("click", function(event) {
         const entry = event.target.parentElement;
         entry.remove();
-        
-        newMessage.appendChild(removeButton);
-    })
+
+    });
+    
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
     
 
     messageForm.reset();

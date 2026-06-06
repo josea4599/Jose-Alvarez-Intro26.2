@@ -114,13 +114,33 @@ h2 {
   margin: 0 auto;
 }
 
+#LeaveMessage input,
+#LeaveMessage textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#LeaveMessage textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#LeaveMessage input:focus,
+#LeaveMessage textarea:focus {
+  outline: 2px solid navy;
+}
+
 #LeaveMessage label {
   font-weight: bold;
   color: white;
 }
 
 #LeaveMessage button {
-  background-color: aquamarine;
+  background-color: rgb(27, 60, 159);
   color: beige;
   border: none;
   padding: 12px;
@@ -129,3 +149,4 @@ h2 {
   cursor: pointer;
 
 }
+
