@@ -18,6 +18,9 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(li);
 }
 
+const messageSection = document.querySelector("#messages");
+const messageList = messageSection.querySelector("ul");
+
 const messageForm = document.querySelector('form[name="leave_message"]');
 
 messageForm.addEventListener("submit", function(event){
@@ -28,6 +31,7 @@ messageForm.addEventListener("submit", function(event){
     const usersEmail = event.target.usersEmail.value;
     const usersMessage = event.target.usersMessage.value;
     const messageList = document.querySelector("#messages ul");
+
 
     console.log(usersName);
     console.log(usersEmail);
