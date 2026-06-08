@@ -150,3 +150,40 @@ h2 {
 
 }
 
+#Projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+}
+
+#Projects li {
+  list-style: none;
+
+  background-color: white;
+  color: black;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+  min-width: 200px;
+
+  font-weight: bold;
+}
+
+#Projects li:hover {
+  transform: translateY(-5px);
+}
+
+#Projects a {
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
+}
+
+#Projects a:hover {
+  color: darkred;
+}
