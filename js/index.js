@@ -61,3 +61,28 @@ messageForm.addEventListener("submit", function(event){
 
     messageForm.reset();
 }); 
+
+
+//lesson 9
+fetch("https://api.github.com/users/josea4599/repos")
+    .then(response => response.json())
+    .then(repositories => {
+        for (let i = 0; i < repositories.length; i++) {
+
+            const project = document.createElement("li");
+            project.innerHTML = `
+                <a href="${repositories[i].html_url}" target="_blank">
+                    ${repositories[i].name}
+                </a>
+            `;
+            projectList.appendChild(project);
+
+        }
+    })
+    .catch(error => {
+        console.error("Error: ", error);
+    });
+
+const projectSelection = document.querySelector("#Projects");
+
+const projectList = projectSelection.querySelector("ul");
