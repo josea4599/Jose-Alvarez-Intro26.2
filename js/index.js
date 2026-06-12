@@ -68,6 +68,7 @@ fetch("https://api.github.com/users/josea4599/repos")
     .then(response => response.json())
     .then(repositories => {
         for (let i = 0; i < repositories.length; i++) {
+            console.log(repositories);
 
             const project = document.createElement("li");
             project.innerHTML = `
@@ -81,6 +82,12 @@ fetch("https://api.github.com/users/josea4599/repos")
     })
     .catch(error => {
         console.error("Error: ", error);
+
+        const errorMessage = document.createElement("li");
+
+        errorMessage.textContent = "Sorry, there is an error in our system!";
+
+        projectList.appendChild(errorMessage);
     });
 
 const projectSelection = document.querySelector("#Projects");
